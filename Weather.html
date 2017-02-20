@@ -1,0 +1,89 @@
+
+<div class="container">
+<style>
+body {
+  background-image:url(http://wallpaperstock.net/stormy-clouds--lovely-plants-wallpapers_44621_1920x1200.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.Crious{
+  color:royalblue;
+}
+p{
+  color: black;
+  font-size:20px;
+  
+}
+
+.ta{
+  color : royalblue;
+  text-align: center;
+  font-family:Courier;
+}
+img {
+  
+  width: 40px;
+  height: 40px;
+}
+
+</style>
+<script>
+$(document).ready(function () {
+                             $.getJSON("http://ipinfo.io/json", function(data) {
+                                         $(".para").html(data.city +","+data.region);
+                                                
+                                 
+            $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=data.city&APPID=928a1606b6efd1ae624a2268c10eba46",function(data1)
+                                                    {  var p = parseInt(data1.main["temp"]);           p=p-273.15;                           
+                                        p=Math.floor(p);             $(".temp").html(p+'<span style="font-size:15">'+"&deg;C"+'</span>');
+                                          p=p * (9/5) + 32 ;
+                                     p=Math.floor(p);           $(".temp1").html(p+'<span style="font-size:15">'+"&deg;F"+'</span>');
+                                                          $(".clouds").html(data1.weather[0].main);
+                                                         
+                                                   
+                                                          $(".image").html('<img src="http://www.freeiconspng.com/uploads/weather-icon-png-15.png"/>'); 
+ 
+                                     
+function F() {
+    document.getElementById("demo").innerHTML =Math.round(4 * 9 / 5 + 32);
+}
+function C() {
+    document.getElementById("demo").innerHTML =Math.round((39- 32) * 5 / 9);
+}                                                     });
+                            
+                                                                                });
+                    
+                
+                                                   });
+        
+</script>
+    <div class="quote-container">
+           <link rel="icon" type="image/png" href="C:\Users\Lalit Singh\Desktop\fb1.png"/>
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<body background="wether.jpg">
+      <div class="box container-fluid">
+     
+           <div class="row">
+                   <div class="col-md-12">
+<h1 class="ta">Local Weather Web Page</h1>
+                     
+                     <div class="col-md-3 col-md-offset-4 well">
+               <div class=image>  </div>           
+                            <p class="para">   </p>
+                            <p class="clouds"> </p>
+                 
+<button class="temp" onclick="C()">C</button> 
+               
+                       <button class="temp1" onclick="F()">F</button>
+                   
+ 
+                       </div>
+                   </div>
+           </div>
+</div>
+      </div>
+<p class=" col-md-3 col-md-offset-4 Crious">Created By Tarachand</p>
+</div>
