@@ -1,0 +1,133 @@
+<div class="container">
+  <h1>Random Quote</h1>
+<style>
+.container {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1
+{
+  font-size:3em;
+  text-align :center;
+color: Navy;  
+}
+body {
+  background-color: snow;
+  font-family: 'Lato', sans-serif;
+  background:url(http://www.wallpapereast.com/static/images/Unique-And-Beautiful-Wallpaper-HD.jpg)
+}
+.quote-container {
+  width: 100%;
+  padding: 6.77966% 0;
+}
+
+.quote-container .quote-text, .quote-container .quote-author {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.quote-container .quote-author {
+  text-align: right;
+  font-size: 1em;
+  color: mintcream;
+}
+.button-container {
+  display: block;
+  text-align: center;
+}
+.button {
+ 
+    display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #000066;
+  border: none;
+  border-radius: 15px;
+  position: absolute;
+  left:    1;
+  bottom:   0;
+}
+.button:hover {
+    background-color: #000033;
+    color: white;
+}
+</style>
+<script>
+var quoteArray = [
+    {
+        content: "Keep in mind I’m only a young lady, remaining before a kid, requesting that he loves her ",
+        author: "@Michael Stinson",
+     
+    },
+    {
+        content: "When life gives you a hundred reasons to cry, show life that you have a thousand reasons to smile",
+        author: "@Unknown"
+    },
+    {
+        content: "Dream what you want to dream, go where you want to go, be what you want to be. Because you have only one life andone chance to do all the things you want to do.",
+        author: "@Unknown"
+    },
+    {
+        content: "Advice is what we ask for when we already know the answer but wish we didn't .",
+        author: "@Erica Jongt"
+    },
+    {
+        content: "I always knew looking back on the tears would make me laugh, but I never knew looking back on the laughs would make me cry. ",
+        author: "@Unknown"
+    },
+    {
+        content: "Designers tend to whisper, ad agencies tend to shout.",
+        author: " @David Stuart"
+    },
+    {
+        content: "Never tell your problems to anyone...20% don't care and the other 80% are glad you have them.",
+        author: "@Lou Holtz"
+    }
+];
+
+var button = document.getElementById('quote-button'),
+    quote = document.getElementById('quote'),
+    author = document.getElementById('quote-author'),
+        random;
+
+window.onload = randomQuote;
+button.addEventListener('click', randomQuote);
+Quote();
+
+function randomQuote (){
+    random = Math.floor(Math.random() * quoteArray.length);
+    quote.innerHTML = quoteArray[random].content;
+    author.innerHTML = quoteArray[random].author;
+   Quote();
+}
+</script>
+    <div class="quote-container">
+      	<div class="jumbotron">
+      <blockquote>
+        <p class="quote-text" id="quote">Click the button below to generate a random quote.</p>
+        <p id="quote-author" class="quote-author"></p>
+
+      </blockquote>
+</div>
+      <span class="button-container">
+                <button class="button button_quote" id="quote-button">Quote</button>
+            </span>
+    </div><div class="container">
+  <h1>Random Quote</h1>
+    <div class="quote-container">
+      	<div class="jumbotron">
+      <blockquote>
+        <p class="quote-text" id="quote">Click the button below to generate a random quote.</p>
+        <p id="quote-author" class="quote-author"></p>
+
+      </blockquote>
+</div>
+      <span class="button-container">
+                <button class="button button_quote" id="quote-button">Quote</button>
+            </span>
+    </div>
